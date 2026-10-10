@@ -21,13 +21,10 @@ jobs:
     steps:
       - name: Get integration test scripts
         uses: actions/checkout@v4
-      - name: Checkout EXACT upstream Nuvio 0.5.8-beta
-        uses: actions/checkout@v4
-        with:
-          repository: NuvioMedia/NuvioMobile
-          ref: 0.5.8-beta
-          path: nuvio
-          persist-credentials: false
+      - name: Clone EXACT upstream Nuvio 0.5.8-beta (bypass stale submodule metadata)
+        run: |
+          git -c submodule.recurse=false clone --depth 1 --branch 0.5.8-beta https://github.com/NuvioMedia/NuvioMobile.git nuvio
+          test "$(git -C nuvio rev-parse HEAD)" = "1ae5066a4dd5026228625e40082eacc3ada68436"
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
