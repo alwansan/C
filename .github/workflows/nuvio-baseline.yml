@@ -34,7 +34,9 @@ jobs:
         run: |
           export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
           yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager --install "platforms;android-37" "build-tools;36.0.0"
+          sdkmanager --install "platforms;android-37.0" "build-tools;36.0.0"
+          test -d "$ANDROID_HOME/platforms/android-37.0"
+          ln -sfn android-37.0 "$ANDROID_HOME/platforms/android-37"
       - name: Set up Gradle cache
         uses: gradle/actions/setup-gradle@v4
       - name: Build the Nuvio fullDebug component
