@@ -42,6 +42,7 @@ jobs:
       - name: Build the Nuvio fullDebug component
         working-directory: nuvio
         run: |
+          touch local.properties
           chmod +x ./gradlew
           ./gradlew :androidApp:assembleFullDebug --no-daemon --stacktrace
       - name: Validate artifact is NOT a merged Cinemana APK
