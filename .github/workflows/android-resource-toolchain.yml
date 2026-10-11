@@ -1,0 +1,38 @@
+name: Android SDK 37 resource link toolchain export
+on:
+  workflow_dispatch:
+  push:
+    branches: [cinemana-nuvio-integration]
+    paths:
+      - '.github/workflows/android-resource-toolchain.yml'
+permissions:
+  contents: read
+jobs:
+  export-toolchain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Get Android SDK Platform 37.0
+        run: |
+          export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+          yes | sdkmanager --licenses > /dev/null || true
+          sdkmanager --install "platforms;android-37.0" "build-tools;36.0.0"
+      - name: Create SDK resource linker artifact
+        run: |
+          set -euo pipefail
+          mkdir -p export/bin export/platforms/android-37.0
+          cp "$ANDROID_HOME/platforms/android-37.0/android.jar" export/platforms/android-37.0/
+          cp "$ANDROID_HOME/build-tools/36.0.0/aapt2" export/bin/
+          cp "$ANDROID_HOME/build-tools/36.0.0/aapt" export/bin/
+          cp "$ANDROID_HOME/build-tools/36.0.0/zipalign" export/bin/
+          cp "$ANDROID_HOME/platforms/android-37.0/source.properties" export/platforms/android-37.0/
+          chmod +x export/bin/*
+          (cd export && sha256sum bin/* platforms/android-37.0/* > SHA256SUMS.txt)
+          cat export/platforms/android-37.0/source.properties
+      - name: Upload Android SDK resource-link tools (public redistributable check required)
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-37-resource-tools-for-local-merge-test
+          path: export/
+          retention-days: 2
+          if-no-files-found: error
