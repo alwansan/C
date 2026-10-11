@@ -44,7 +44,7 @@ jobs:
         run: |
           touch local.properties
           chmod +x ./gradlew
-          ./gradlew :composeApp:assemble --no-daemon --stacktrace
+          ./gradlew :composeApp:assemble -Pnuvio.android.distribution=full --no-daemon --stacktrace
       - name: Validate Android library archive has AndroidManifest and compiled resources
         run: |
           python3 integration/check_nuvio_aar.py nuvio/composeApp/build
