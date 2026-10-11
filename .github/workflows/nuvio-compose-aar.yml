@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/nuvio-compose-aar.yml'
       - 'integration/patch218/**'
+      - 'integration/patch219/**'
       - 'integration/check_nuvio_aar.py'
       - 'integration/prepare_local_maven_aars.py'
   workflow_dispatch:
@@ -48,6 +49,11 @@ jobs:
           git -C nuvio apply --check /tmp/nuvio-bridge.patch
           git -C nuvio apply /tmp/nuvio-bridge.patch
           git -C nuvio status --short
+      - name: Apply PATCH219 Media3 player layout isolation
+        run: |
+          git -C nuvio apply --check ../integration/patch219/media3-player-layout-isolation.patch
+          git -C nuvio apply ../integration/patch219/media3-player-layout-isolation.patch
+          test -f nuvio/composeApp/src/androidMain/res/layout/nuvio_player_view_shell.xml
       - name: Wrap the 12 bundled local AAR files into CI-only Maven coordinates
         run: |
           python3 integration/prepare_local_maven_aars.py nuvio
