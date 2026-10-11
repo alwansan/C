@@ -1,10 +1,11 @@
-name: Nuvio 0.5.8 Compose Android library AAR (NOT merged)
+name: Nuvio 0.5.8 PATCH218 Compose AAR (NOT merged)
 on:
   push:
     branches: [cinemana-nuvio-integration]
     paths:
       - '.github/workflows/nuvio-compose-aar.yml'
-      - 'integration/**'
+      - 'integration/patch218/**'
+      - 'integration/check_nuvio_aar.py'
   workflow_dispatch:
 
 permissions:
@@ -39,7 +40,14 @@ jobs:
           ln -sfn android-37.0 "$ANDROID_HOME/platforms/android-37"
       - name: Set up Gradle cache
         uses: gradle/actions/setup-gradle@v4
-      - name: Build Compose Android library (no applicationId)
+      - name: Verify and apply PATCH216 Kotlin overlay (17 modified paths)
+        run: |
+          cat integration/patch218/part_*.txt | base64 --decode | gzip -dc > /tmp/nuvio-bridge.patch
+          echo "96b20383083e5446f4f7507815d4179c39fbbfcd8deec5947fcefca0b588391e  /tmp/nuvio-bridge.patch" | sha256sum -c -
+          git -C nuvio apply --check /tmp/nuvio-bridge.patch
+          git -C nuvio apply /tmp/nuvio-bridge.patch
+          git -C nuvio status --short
+      - name: Build patched Compose Android library (no applicationId)
         working-directory: nuvio
         run: |
           touch local.properties
@@ -51,7 +59,7 @@ jobs:
       - name: Upload library AAR (Nuvio module only)
         uses: actions/upload-artifact@v4
         with:
-          name: nuvio-058-compose-android-library-not-merged
+          name: nuvio-058-PATCH218-compose-aar-NOT-merged
           path: nuvio/composeApp/build/**/*.aar
           if-no-files-found: error
           retention-days: 7
