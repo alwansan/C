@@ -6,6 +6,7 @@ on:
       - '.github/workflows/nuvio-compose-aar.yml'
       - 'integration/patch218/**'
       - 'integration/check_nuvio_aar.py'
+      - 'integration/prepare_local_maven_aars.py'
   workflow_dispatch:
 
 permissions:
@@ -47,6 +48,9 @@ jobs:
           git -C nuvio apply --check /tmp/nuvio-bridge.patch
           git -C nuvio apply /tmp/nuvio-bridge.patch
           git -C nuvio status --short
+      - name: Wrap the 12 bundled local AAR files into CI-only Maven coordinates
+        run: |
+          python3 integration/prepare_local_maven_aars.py nuvio
       - name: Build patched Compose Android library (no applicationId)
         working-directory: nuvio
         run: |
