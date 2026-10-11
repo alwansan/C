@@ -17,7 +17,7 @@
      </application>
  
 --- /dev/null
-+++ b/androidApp/src/main/kotlin/com/nuvio/app/NuvioFileProvider.kt
++++ b/composeApp/src/androidMain/kotlin/com/nuvio/app/NuvioFileProvider.kt
 @@ -0,0 +1,6 @@
 +package com.nuvio.app
 +
