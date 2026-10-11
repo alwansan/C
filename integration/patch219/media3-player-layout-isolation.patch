@@ -1,0 +1,81 @@
+--- a/composeApp/src/androidMain/kotlin/com/nuvio/app/features/player/PlayerEngine.android.kt
++++ b/composeApp/src/androidMain/kotlin/com/nuvio/app/features/player/PlayerEngine.android.kt
+@@ -1011,7 +1011,10 @@
+     AndroidView(
+         modifier = modifier,
+         factory = { viewContext ->
+-            PlayerView(viewContext).apply {
++            // Explicit Media3 layout isolation: Cinemana uses ExoPlayer2's
++            // exo_player_view, which must retain its original resource ID.
++            (android.view.LayoutInflater.from(viewContext)
++                .inflate(com.nuvio.app.R.layout.nuvio_player_view_shell, null, false) as PlayerView).apply {
+                 useController = useNativeController
+                 layoutParams = android.view.ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT)
+                 player = exoPlayer
+--- /dev/null
++++ b/composeApp/src/androidMain/res/layout/nuvio_exo_player_view.xml
+@@ -0,0 +1,54 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merge xmlns:android="http://schemas.android.com/apk/res/android">
++
++    <androidx.media3.ui.AspectRatioFrameLayout
++        android:id="@id/exo_content_frame"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:layout_gravity="center">
++
++        <View
++            android:id="@id/exo_shutter"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:background="@android:color/black" />
++
++        <ImageView
++            android:id="@id/exo_artwork"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:scaleType="fitXY" />
++
++        <FrameLayout
++            android:id="@+id/libass_overlay_container"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent" />
++
++    </androidx.media3.ui.AspectRatioFrameLayout>
++
++    <FrameLayout
++        android:id="@+id/libass_overlay_container_gl"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent" />
++
++    <androidx.media3.ui.SubtitleView
++        android:id="@id/exo_subtitles"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent" />
++
++    <FrameLayout
++        android:id="@id/exo_ad_overlay"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent" />
++
++    <FrameLayout
++        android:id="@id/exo_overlay"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent" />
++
++    <View
++        android:id="@id/exo_controller_placeholder"
++        android:layout_width="match_parent"
++        android:layout_height="match_parent" />
++
++</merge>
+--- /dev/null
++++ b/composeApp/src/androidMain/res/layout/nuvio_player_view_shell.xml
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.media3.ui.PlayerView
++    xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    app:player_layout_id="@layout/nuvio_exo_player_view" />
