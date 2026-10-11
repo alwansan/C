@@ -54,6 +54,12 @@ jobs:
           git -C nuvio apply --check ../integration/patch219/media3-player-layout-isolation.patch
           git -C nuvio apply ../integration/patch219/media3-player-layout-isolation.patch
           test -f nuvio/composeApp/src/androidMain/res/layout/nuvio_player_view_shell.xml
+      - name: Isolate Nuvio FileProvider resources from Cinemana provider
+        run: |
+          git -C nuvio apply --check ../integration/patch219/nuvio-fileprovider-isolation.patch
+          git -C nuvio apply ../integration/patch219/nuvio-fileprovider-isolation.patch
+          test -f nuvio/composeApp/src/androidMain/res/xml/nuvio_file_paths.xml
+          test ! -e nuvio/composeApp/src/androidMain/res/xml/file_paths.xml
       - name: Wrap the 12 bundled local AAR files into CI-only Maven coordinates
         run: |
           python3 integration/prepare_local_maven_aars.py nuvio
