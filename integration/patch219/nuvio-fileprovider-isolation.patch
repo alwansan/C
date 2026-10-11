@@ -1,6 +1,13 @@
 --- a/androidApp/src/main/AndroidManifest.xml
 +++ b/androidApp/src/main/AndroidManifest.xml
-@@ -182,7 +182,7 @@
+@@ -176,13 +176,13 @@
+             android:exported="false" />
+ 
+         <provider
+-            android:name="androidx.core.content.FileProvider"
++            android:name="com.nuvio.app.NuvioFileProvider"
+             android:authorities="${applicationId}.fileprovider"
+             android:exported="false"
              android:grantUriPermissions="true">
              <meta-data
                  android:name="android.support.FILE_PROVIDER_PATHS"
@@ -9,6 +16,15 @@
          </provider>
      </application>
  
+--- /dev/null
++++ b/androidApp/src/main/kotlin/com/nuvio/app/NuvioFileProvider.kt
+@@ -0,0 +1,6 @@
++package com.nuvio.app
++
++import androidx.core.content.FileProvider
++
++/** Keeps Nuvio's file paths/authority separate from the native Cinemana FileProvider. */
++class NuvioFileProvider : FileProvider()
 --- a/composeApp/src/androidMain/res/xml/file_paths.xml
 +++ /dev/null
 @@ -1,12 +0,0 @@
