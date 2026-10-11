@@ -47,7 +47,7 @@ jobs:
           ./gradlew :androidApp:assembleFullDebug --no-daemon --stacktrace
       - name: Validate artifact is NOT a merged Cinemana APK
         run: |
-          python3 integration/check_component_apk.py nuvio/androidApp/build/outputs/apk
+          PATH="$ANDROID_HOME/build-tools/36.0.0:$PATH" python3 integration/check_component_apk.py nuvio/androidApp/build/outputs/apk
       - name: Upload UI baseline APK (not merged)
         uses: actions/upload-artifact@v4
         with:
