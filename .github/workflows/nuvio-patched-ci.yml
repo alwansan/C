@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/nuvio-patched-ci.yml'
       - 'integration/patch218/**'
+      - 'integration/patch219/**'
       - 'integration/check_component_apk.py'
   workflow_dispatch:
 
@@ -47,6 +48,11 @@ jobs:
           git -C nuvio apply --check /tmp/nuvio-bridge.patch
           git -C nuvio apply /tmp/nuvio-bridge.patch
           git -C nuvio status --short
+      - name: Apply PATCH219 Media3 player layout isolation
+        run: |
+          git -C nuvio apply --check ../integration/patch219/media3-player-layout-isolation.patch
+          git -C nuvio apply ../integration/patch219/media3-player-layout-isolation.patch
+          test -f nuvio/composeApp/src/androidMain/res/layout/nuvio_player_view_shell.xml
       - name: Build patched Nuvio fullDebug component
         working-directory: nuvio
         run: |
