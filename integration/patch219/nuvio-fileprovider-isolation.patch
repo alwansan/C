@@ -1,0 +1,57 @@
+--- a/androidApp/src/main/AndroidManifest.xml
++++ b/androidApp/src/main/AndroidManifest.xml
+@@ -176,13 +176,13 @@
+             android:exported="false" />
+ 
+         <provider
+-            android:name="androidx.core.content.FileProvider"
++            android:name="com.nuvio.app.NuvioFileProvider"
+             android:authorities="${applicationId}.fileprovider"
+             android:exported="false"
+             android:grantUriPermissions="true">
+             <meta-data
+                 android:name="android.support.FILE_PROVIDER_PATHS"
+-                android:resource="@xml/file_paths" />
++                android:resource="@xml/nuvio_file_paths" />
+         </provider>
+     </application>
+ 
+--- /dev/null
++++ b/composeApp/src/androidMain/kotlin/com/nuvio/app/NuvioFileProvider.kt
+@@ -0,0 +1,6 @@
++package com.nuvio.app
++
++import androidx.core.content.FileProvider
++
++/** Keeps Nuvio's file paths/authority separate from the native Cinemana FileProvider. */
++class NuvioFileProvider : FileProvider()
+--- a/composeApp/src/androidMain/res/xml/file_paths.xml
++++ /dev/null
+@@ -1,12 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<paths>
+-    <cache-path
+-        name="nuvio_updates"
+-        path="updates/" />
+-    <cache-path
+-        name="nuvio_subtitles"
+-        path="subtitles/" />
+-    <files-path
+-        name="nuvio_downloads"
+-        path="downloads/" />
+-</paths>
+--- /dev/null
++++ b/composeApp/src/androidMain/res/xml/nuvio_file_paths.xml
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="utf-8"?>
++<paths>
++    <cache-path
++        name="nuvio_updates"
++        path="updates/" />
++    <cache-path
++        name="nuvio_subtitles"
++        path="subtitles/" />
++    <files-path
++        name="nuvio_downloads"
++        path="downloads/" />
++</paths>

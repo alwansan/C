@@ -1,0 +1,57 @@
+name: Nuvio 0.5.8 Android baseline (NOT merged)
+on:
+  push:
+    branches: [cinemana-nuvio-integration]
+    paths:
+      - '.github/workflows/nuvio-baseline.yml'
+      - 'integration/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nuvio-baseline-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  nuvio-baseline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - name: Get integration test scripts
+        uses: actions/checkout@v4
+      - name: Clone EXACT upstream Nuvio 0.5.8-beta (bypass stale submodule metadata)
+        run: |
+          git -c submodule.recurse=false clone --depth 1 --branch 0.5.8-beta https://github.com/NuvioMedia/NuvioMobile.git nuvio
+          test "$(git -C nuvio rev-parse HEAD)" = "1ae5066a4dd5026228625e40082eacc3ada68436"
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Install Android platform into preinstalled runner SDK
+        run: |
+          export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+          yes | sdkmanager --licenses > /dev/null || true
+          sdkmanager --install "platforms;android-37.0" "build-tools;36.0.0"
+          test -d "$ANDROID_HOME/platforms/android-37.0"
+          ln -sfn android-37.0 "$ANDROID_HOME/platforms/android-37"
+      - name: Set up Gradle cache
+        uses: gradle/actions/setup-gradle@v4
+      - name: Build the Nuvio fullDebug component
+        working-directory: nuvio
+        run: |
+          touch local.properties
+          chmod +x ./gradlew
+          ./gradlew :androidApp:assembleFullDebug --no-daemon --stacktrace
+      - name: Validate artifact is NOT a merged Cinemana APK
+        run: |
+          PATH="$ANDROID_HOME/build-tools/36.0.0:$PATH" python3 integration/check_component_apk.py nuvio/androidApp/build/outputs/apk
+      - name: Upload UI baseline APK (not merged)
+        uses: actions/upload-artifact@v4
+        with:
+          name: nuvio-058-fullDebug-component-only
+          path: nuvio/androidApp/build/outputs/apk/full/debug/*.apk
+          if-no-files-found: error
+          retention-days: 7

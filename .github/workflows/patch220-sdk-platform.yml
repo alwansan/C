@@ -1,0 +1,31 @@
+name: PATCH220 temporary Android platform resource linker
+on:
+  workflow_dispatch:
+  push:
+    branches: [cinemana-nuvio-integration]
+    paths: ['.github/workflows/patch220-sdk-platform.yml']
+permissions:
+  contents: read
+jobs:
+  platform-resource-jar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Install platform 37.0 from official Google SDK repository
+        run: |
+          export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+          yes | sdkmanager --licenses > /dev/null || true
+          sdkmanager --install "platforms;android-37.0"
+          test -s "$ANDROID_HOME/platforms/android-37.0/android.jar"
+      - name: Stage compiler API resource jar for isolated host resource test
+        run: |
+          mkdir -p staging
+          cp "$ANDROID_HOME/platforms/android-37.0/android.jar" staging/android.jar
+          (cd staging && sha256sum android.jar > SHA256SUMS.txt)
+      - name: Upload short-lived build input (not a software release)
+        uses: actions/upload-artifact@v4
+        with:
+          name: patch220-api37-build-input
+          path: staging/
+          retention-days: 1
+          if-no-files-found: error

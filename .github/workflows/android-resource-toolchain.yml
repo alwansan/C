@@ -1,0 +1,66 @@
+name: Stable Cinemana resource IDs / Nuvio layout smoke test (NOT merged)
+on:
+  workflow_dispatch:
+  push:
+    branches: [cinemana-nuvio-integration]
+    paths:
+      - '.github/workflows/android-resource-toolchain.yml'
+permissions:
+  contents: read
+jobs:
+  resource-linker-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Install resource compiler SDK 37.0
+        run: |
+          export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+          yes | sdkmanager --licenses > /dev/null || true
+          sdkmanager --install "platforms;android-37.0" "build-tools;36.0.0"
+      - name: Link synthetic resource set preserving actual Cinemana IDs
+        run: |
+          set -euo pipefail
+          mkdir -p smoke/res/layout smoke/res/xml smoke/res/values smoke/output
+          cat > smoke/AndroidManifest.xml <<'EOF'
+          <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.shabakaty.cinemana">
+            <application android:label="@string/app_name" />
+          </manifest>
+          EOF
+          cat > smoke/res/layout/exo_player_view.xml <<'EOF'
+          <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" />
+          EOF
+          cat > smoke/res/layout/nuvio_exo_player_view.xml <<'EOF'
+          <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" />
+          EOF
+          cat > smoke/res/xml/file_paths.xml <<'EOF'
+          <paths><files-path name="cinemana" path="." /></paths>
+          EOF
+          cat > smoke/res/xml/nuvio_file_paths.xml <<'EOF'
+          <paths><files-path name="nuvio" path="downloads/" /></paths>
+          EOF
+          cat > smoke/res/values/strings.xml <<'EOF'
+          <resources><string name="app_name">Cinemana</string></resources>
+          EOF
+          cat > smoke/stable.txt <<'EOF'
+          com.shabakaty.cinemana:layout/exo_player_view = 0x7f0d005c
+          com.shabakaty.cinemana:string/app_name = 0x7f120024
+          com.shabakaty.cinemana:xml/file_paths = 0x7f150002
+          EOF
+          AAPT2="$ANDROID_HOME/build-tools/36.0.0/aapt2"
+          "$AAPT2" compile --dir smoke/res -o smoke/output/resources.zip
+          "$AAPT2" link -o smoke/output/smoke.apk -I "$ANDROID_HOME/platforms/android-37.0/android.jar" --manifest smoke/AndroidManifest.xml --stable-ids smoke/stable.txt --auto-add-overlay --emit-ids smoke/output/emitted.txt -R smoke/output/resources.zip
+          for line in "com.shabakaty.cinemana:layout/exo_player_view = 0x7f0d005c" "com.shabakaty.cinemana:string/app_name = 0x7f120024" "com.shabakaty.cinemana:xml/file_paths = 0x7f150002"; do
+            grep -Fx "$line" smoke/output/emitted.txt
+          done
+          grep -q 'layout/nuvio_exo_player_view' smoke/output/emitted.txt
+          grep -q 'xml/nuvio_file_paths' smoke/output/emitted.txt
+          echo "PASS synthetic resource link with Cinemana reserved IDs; does NOT validate real host APK." > smoke/output/RESULT.txt
+      - name: Upload smoke test log only (no SDK redistribution)
+        uses: actions/upload-artifact@v4
+        with:
+          name: patch219-resource-id-smoke-report
+          path: |
+            smoke/output/RESULT.txt
+            smoke/output/emitted.txt
+          if-no-files-found: error
+          retention-days: 7
