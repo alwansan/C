@@ -48,7 +48,7 @@ jobs:
           EOF
           AAPT2="$ANDROID_HOME/build-tools/36.0.0/aapt2"
           "$AAPT2" compile --dir smoke/res -o smoke/output/resources.zip
-          "$AAPT2" link -o smoke/output/smoke.apk -I "$ANDROID_HOME/platforms/android-37.0/android.jar" --manifest smoke/AndroidManifest.xml --stable-ids smoke/stable.txt --emit-ids smoke/output/emitted.txt -R smoke/output/resources.zip
+          "$AAPT2" link -o smoke/output/smoke.apk -I "$ANDROID_HOME/platforms/android-37.0/android.jar" --manifest smoke/AndroidManifest.xml --stable-ids smoke/stable.txt --auto-add-overlay --emit-ids smoke/output/emitted.txt -R smoke/output/resources.zip
           for line in "com.shabakaty.cinemana:layout/exo_player_view = 0x7f0d005c" "com.shabakaty.cinemana:string/app_name = 0x7f120024" "com.shabakaty.cinemana:xml/file_paths = 0x7f150002"; do
             grep -Fx "$line" smoke/output/emitted.txt
           done
