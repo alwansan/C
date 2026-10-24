@@ -1,0 +1,66 @@
+1792863108553 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player]
+1792863108553 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player] exposed=3
+1792863108963 CATALOG128 empty path=file:/storage/emulated/0/Cinemana/ناروتو/Season%201%20ناروتو/ناروتو%20S01%20E115.mkv
+1792863109187 CATALOG128 empty path=file:/storage/emulated/0/Cinemana/ناروتو/Season%201%20ناروتو/ناروتو%20S01%20E115.mkv
+1792863110190 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player]
+1792863110191 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player] exposed=1
+1792863114227 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player]
+1792863114228 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player] exposed=2
+1792863114651 CATALOG128 empty path=file:/storage/emulated/0/Cinemana/ناروتو/Season%201%20ناروتو/ناروتو%20S01%20E116.mkv
+1792863114882 CATALOG128 empty path=file:/storage/emulated/0/Cinemana/ناروتو/Season%201%20ناروتو/ناروتو%20S01%20E116.mkv
+1792863115887 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player]
+1792863115889 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player] exposed=2
+1792863117354 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player]
+1792863117357 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player] exposed=3
+1792863118787 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player]
+1792863118790 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player] exposed=3
+1792863120090 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player]
+1792863120091 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player] exposed=3
+1792863125997 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player]
+1792863125999 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player] exposed=3
+1792863130077 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player]
+1792863130079 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player] exposed=2
+1792863130081 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player]
+1792863130082 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player] exposed=2
+1792863130498 CATALOG128 empty path=file:/storage/emulated/0/Cinemana/ناروتو/Season%201%20ناروتو/ناروتو%20S01%20E116.mkv
+1792863132355 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player]
+1792863132360 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player] exposed=2
+1792863132366 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player]
+1792863132372 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player] exposed=2
+1792863133297 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player]
+1792863133301 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player] exposed=2
+1792863133306 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player]
+1792863133311 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player] exposed=2
+1792863134027 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player]
+1792863134028 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player] exposed=2
+1792863142037 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player]
+1792863142038 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player] exposed=2
+1792863143040 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player]
+1792863143042 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player] exposed=2
+1792863156158 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player]
+1792863156159 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:sp/text/x-ssa@player,2:file/text/x-ssa@player] exposed=3
+1792863156563 CATALOG128 empty path=file:/storage/emulated/0/Cinemana/ناروتو/Season%201%20ناروتو/ناروتو%20S01%20E117.mkv
+1792863157851 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player]
+1792863157852 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player] exposed=1
+1792863157854 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player]
+1792863157855 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player] exposed=1
+1792863158810 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player]
+1792863158811 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player] exposed=1
+1792863158814 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player]
+1792863158816 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player] exposed=1
+1792863159641 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player]
+1792863159642 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player] exposed=1
+1792863168384 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player]
+1792863168386 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player] exposed=1
+1792863169389 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player]
+1792863169391 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player] exposed=1
+1792863171298 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player]
+1792863171301 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player] exposed=2
+1792863172113 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player]
+1792863172115 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player] exposed=2
+1792863173000 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player]
+1792863173001 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player] exposed=2
+1792863176830 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player]
+1792863176831 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player] exposed=2
+1792863177834 PROBE128 chosen=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player]
+1792863177836 CATALOG128 source=verified path=player tracks=[0:ar/application/x-subrip@player,1:file/text/x-ssa@player] exposed=2

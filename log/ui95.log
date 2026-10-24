@@ -1,0 +1,16 @@
+1792863108569	mkv_video_cues102	video_track=1 cue_points=543 video_points=377
+1792863109000	video_position_reset102	renderer_target_us=0 source_preserved=true
+1792863109260	video_first_output101	frame_us=43000 elapsed_ms=259
+1792863114243	mkv_video_cues102	video_track=1 cue_points=588 video_points=407
+1792863126051	mkv_video_cues102	video_track=1 cue_points=543 video_points=377
+1792863130103	mkv_video_cues102	video_track=1 cue_points=543 video_points=377
+1792863143075	mkv_video_cues102	video_track=1 cue_points=543 video_points=377
+1792863156177	mkv_video_cues102	video_track=1 cue_points=543 video_points=377
+1792863156639	video_position_reset102	renderer_target_us=0 source_preserved=true
+1792863157003	video_first_output101	frame_us=12022000 elapsed_ms=332
+1792863169425	mkv_video_cues102	video_track=1 cue_points=595 video_points=437
+1792863169427	video_position_reset102	renderer_target_us=18148000 source_preserved=true
+1792863169497	video_first_output101	frame_us=18161000 elapsed_ms=71
+1792863177879	mkv_video_cues102	video_track=1 cue_points=595 video_points=437
+1792863177881	video_position_reset102	renderer_target_us=26351000 source_preserved=true
+1792863177944	video_first_output101	frame_us=26369000 elapsed_ms=64

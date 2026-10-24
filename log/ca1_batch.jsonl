@@ -1,0 +1,31 @@
+{"utc_ms":1792863104263,"elapsed_ms":368827775,"pid":12990,"thread":"main","session":"enhancements","stage":"sort_install","detail":"anchor=false"}
+{"utc_ms":1792863108536,"elapsed_ms":368832048,"pid":12990,"thread":"main","session":"enhancements","stage":"subtitle_size_apply","detail":"sp=20.0 px=47.25"}
+{"utc_ms":1792863108576,"elapsed_ms":368832089,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=147780000"}
+{"utc_ms":1792863110237,"elapsed_ms":368833750,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=1353055000"}
+{"utc_ms":1792863110540,"elapsed_ms":368834053,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_sample_retained","detail":"samples=1 end_us=1394900000"}
+{"utc_ms":1792863114212,"elapsed_ms":368837724,"pid":12990,"thread":"main","session":"enhancements","stage":"subtitle_size_apply","detail":"sp=20.0 px=47.25"}
+{"utc_ms":1792863114354,"elapsed_ms":368837867,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=1354217354"}
+{"utc_ms":1792863114451,"elapsed_ms":368837963,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_sample_retained","detail":"samples=1 end_us=1394900000"}
+{"utc_ms":1792863114739,"elapsed_ms":368838252,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=application\/x-subrip position_us=0"}
+{"utc_ms":1792863115084,"elapsed_ms":368838597,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=application\/x-subrip position_us=157780000"}
+{"utc_ms":1792863115427,"elapsed_ms":368838940,"pid":12990,"thread":"ExoPlayer:SimpleDecoder","session":"subtitles","stage":"subtitle_timeline","detail":"format=SRT intervals=1 boundaries=2"}
+{"utc_ms":1792863115908,"elapsed_ms":368839421,"pid":12990,"thread":"ExoPlayer:SimpleDecoder","session":"subtitles","stage":"subtitle_timeline","detail":"format=SRT intervals=1 boundaries=2"}
+{"utc_ms":1792863115954,"elapsed_ms":368839466,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=158148000"}
+{"utc_ms":1792863126057,"elapsed_ms":368849570,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=application\/x-subrip position_us=158148000"}
+{"utc_ms":1792863130061,"elapsed_ms":368853574,"pid":12990,"thread":"main","session":"enhancements","stage":"subtitle_size_apply","detail":"sp=20.0 px=47.25"}
+{"utc_ms":1792863130141,"elapsed_ms":368853653,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=application\/x-subrip position_us=158148000"}
+{"utc_ms":1792863130553,"elapsed_ms":368854066,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=application\/x-subrip position_us=0"}
+{"utc_ms":1792863130679,"elapsed_ms":368854192,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=application\/x-subrip position_us=157780000"}
+{"utc_ms":1792863131007,"elapsed_ms":368854520,"pid":12990,"thread":"ExoPlayer:SimpleDecoder","session":"subtitles","stage":"subtitle_timeline","detail":"format=SRT intervals=1 boundaries=2"}
+{"utc_ms":1792863131502,"elapsed_ms":368855014,"pid":12990,"thread":"ExoPlayer:SimpleDecoder","session":"subtitles","stage":"subtitle_timeline","detail":"format=SRT intervals=1 boundaries=2"}
+{"utc_ms":1792863135008,"elapsed_ms":368858521,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_sample_retained","detail":"samples=1 end_us=163764000"}
+{"utc_ms":1792863143084,"elapsed_ms":368866596,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=164038000"}
+{"utc_ms":1792863146691,"elapsed_ms":368870204,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=167038000"}
+{"utc_ms":1792863148728,"elapsed_ms":368872241,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=164038000"}
+{"utc_ms":1792863150447,"elapsed_ms":368873960,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=167038000"}
+{"utc_ms":1792863156142,"elapsed_ms":368879655,"pid":12990,"thread":"main","session":"enhancements","stage":"subtitle_size_apply","detail":"sp=20.0 px=47.25"}
+{"utc_ms":1792863156208,"elapsed_ms":368879721,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=167038000"}
+{"utc_ms":1792863169440,"elapsed_ms":368892952,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=18148000"}
+{"utc_ms":1792863169562,"elapsed_ms":368893075,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_sample_retained","detail":"samples=1 end_us=1395820000"}
+{"utc_ms":1792863177892,"elapsed_ms":368901405,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_track_ready","detail":"mime=text\/x-ssa position_us=26351000"}
+{"utc_ms":1792863177991,"elapsed_ms":368901504,"pid":12990,"thread":"ExoPlayer:Playback","session":"enhancements","stage":"subtitle_sample_retained","detail":"samples=1 end_us=1397560000"}
