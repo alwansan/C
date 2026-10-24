@@ -1,0 +1,84 @@
+تقرير تشخيص شامل لملفات الفيديو - Cinemana / MKV investigation
+تم إنشاء هذا التقرير دون تعديل الملفات الأصلية.
+
+[بيئة الاختبار]
+التاريخ: 2026-10-24T18:19:48+03:00
+Python: 3.14.8
+Platform: Android-15-aarch64-64bit
+Machine: aarch64
+ffmpeg: /data/data/com.termux/files/usr/bin/ffmpeg
+  ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+  built with Android (16134705, +pgo, +bolt, +lto, +mlgo, based on r574158c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 9f872551d3c681d06fd303b36f16ed5c274735eb)
+ffprobe: /data/data/com.termux/files/usr/bin/ffprobe
+  ffprobe version 9.0.2 Copyright (c) 2007-2026 the FFmpeg developers
+  built with Android (16134705, +pgo, +bolt, +lto, +mlgo, based on r574158c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 9f872551d3c681d06fd303b36f16ed5c274735eb)
+
+مجلد الإدخال: /storage/emulated/0/Download/Games/mkv
+عدد الملفات التي اكتمل تحليلها: 5 من 5
+وضع اختبار فك الترميز: sample
+مدة العينة: 15 ثانية
+
+========================================================================================
+المقارنة المجمّعة بين جميع الملفات
+========================================================================================
+التركيز: مقارنة E116 بين MP4 وMKV وبين 1080p و240p، ومقارنة E220 بوصفه ملف MKV آخر.
+
+----------------------------------------------------------------------------------------
+ناروتو S01 E116 1080p.mkv
+الحجم=270.82 MiB | الحاوية=matroska,webm | مدة الحاوية=1383.434 sec | bitrate=1642167
+VIDEO: codec_name=h264 | profile=High 10 | width=1920 | height=1080 | pix_fmt=yuv420p10le | bits_per_raw_sample=10 | level=50 | avg_frame_rate=24000/1001 | r_frame_rate=24000/1001 | duration=1359.539 | bit_rate=None | time_base=1/1000
+AUDIO 1: codec=aac | profile=LC | lang=jpn | rate=48000 | channels=2 | duration=1359.509
+SUB 1: codec=subrip | lang=ar | title=arabic subtitle for ناروتو S01 E116 | duration=1383.434 | time_base=1/1000
+SUB 2: codec=ass | lang=sp | title=special subtitle for ناروتو S01 E116 | duration=1383.434 | time_base=1/1000
+DECODE: البداية=نجح ; قرب نهاية الصورة/الصوت=نجح
+
+----------------------------------------------------------------------------------------
+ناروتو S01 E116 240p.mkv
+الحجم=40.45 MiB | الحاوية=matroska,webm | مدة الحاوية=1383.463 sec | bitrate=245250
+VIDEO: codec_name=h264 | profile=High | width=426 | height=240 | pix_fmt=yuv420p | bits_per_raw_sample=8 | level=21 | avg_frame_rate=24000/1001 | r_frame_rate=24000/1001 | duration=1359.568 | bit_rate=None | time_base=1/1000
+AUDIO 1: codec=aac | profile=LC | lang=jpn | rate=48000 | channels=2 | duration=1359.539
+SUB 1: codec=subrip | lang=ar | title=arabic subtitle for ناروتو S01 E116 | duration=1383.463 | time_base=1/1000
+SUB 2: codec=ass | lang=sp | title=special subtitle for ناروتو S01 E116 | duration=1383.463 | time_base=1/1000
+DECODE: البداية=نجح ; قرب نهاية الصورة/الصوت=نجح
+
+----------------------------------------------------------------------------------------
+ناروتو S01 E116 [cnm-48s73p6q4b3mdcb7fbmx] 1080p.mp4
+الحجم=271.00 MiB | الحاوية=mov,mp4,m4a,3gp,3g2,mj2 | مدة الحاوية=1359.525 sec | bitrate=1672123
+VIDEO: codec_name=h264 | profile=High 10 | width=1920 | height=1080 | pix_fmt=yuv420p10le | bits_per_raw_sample=10 | level=50 | avg_frame_rate=24000/1001 | r_frame_rate=24000/1001 | duration=1359.524833 | bit_rate=1504571 | time_base=1/24000
+AUDIO 1: codec=aac | profile=LC | lang=jpn | rate=48000 | channels=2 | duration=1359.495
+DECODE: البداية=نجح ; قرب نهاية الصورة/الصوت=نجح
+
+----------------------------------------------------------------------------------------
+ناروتو S01 E116 [cnm-680unu62q5914m78cfcf] 240p.mp4
+الحجم=40.65 MiB | الحاوية=mov,mp4,m4a,3gp,3g2,mj2 | مدة الحاوية=1359.525 sec | bitrate=250836
+VIDEO: codec_name=h264 | profile=High | width=426 | height=240 | pix_fmt=yuv420p | bits_per_raw_sample=8 | level=21 | avg_frame_rate=24000/1001 | r_frame_rate=24000/1001 | duration=1359.524833 | bit_rate=195398 | time_base=1/24000
+AUDIO 1: codec=aac | profile=LC | lang=jpn | rate=48000 | channels=2 | duration=1359.495
+DECODE: البداية=نجح ; قرب نهاية الصورة/الصوت=نجح
+
+----------------------------------------------------------------------------------------
+ناروتو S01 E220 1080p.mkv
+الحجم=189.77 MiB | الحاوية=matroska,webm | مدة الحاوية=1414.090 sec | bitrate=1125718
+VIDEO: codec_name=h264 | profile=High | width=1280 | height=960 | pix_fmt=yuv420p | bits_per_raw_sample=8 | level=40 | avg_frame_rate=30000/1001 | r_frame_rate=30000/1001 | duration=1414.09 | bit_rate=None | time_base=1/1000
+AUDIO 1: codec=aac | profile=LC | lang= | rate=48000 | channels=2 | duration=1413.968
+SUB 1: codec=subrip | lang=ar | title=arabic subtitle for ناروتو S01 E220 | duration=1414.09 | time_base=1/1000
+DECODE: البداية=نجح ; قرب نهاية الصورة/الصوت=نجح
+
+========================================================================================
+استنتاجات مقارنة آلية يجب مراجعتها مع سجل المشغل
+========================================================================================
+
+مجموعة E116:
+- ناروتو S01 E116 1080p.mkv: container=matroska,webm; duration=1383.434; video=h264/High 10/yuv420p10le/1920x1080; video_duration=1359.539; subtitles=2
+- ناروتو S01 E116 240p.mkv: container=matroska,webm; duration=1383.463; video=h264/High/yuv420p/426x240; video_duration=1359.568; subtitles=2
+- ناروتو S01 E116 [cnm-48s73p6q4b3mdcb7fbmx] 1080p.mp4: container=mov,mp4,m4a,3gp,3g2,mj2; duration=1359.525; video=h264/High 10/yuv420p10le/1920x1080; video_duration=1359.525; subtitles=0
+- ناروتو S01 E116 [cnm-680unu62q5914m78cfcf] 240p.mp4: container=mov,mp4,m4a,3gp,3g2,mj2; duration=1359.525; video=h264/High/yuv420p/426x240; video_duration=1359.525; subtitles=0
+اختلافات المسارات أعلاه تفصل بين اختلاف الحاوية وبين اختلاف الترميز أو العمق اللوني أو مدة الترجمة.
+
+قراءة الفروق المهمة:
+1) إذا MP4 وMKV لنفس الحلقة يحملان codec/profile/pix_fmt/الأبعاد نفسها، فالدمج غالبًا لم يغيّر مسار الفيديو؛ ابحث في مسارات الترجمة أو مدة الحاوية أو طريقة تعامل المشغل مع التوقيت.
+2) إذا 1080p هو High 10 أو yuv420p10le بينما 240p هو 8-bit مثل yuv420p، فاختلاف العمق اللوني/الملف الشخصي مرشح قوي لمشكلة توافق Decoder.
+3) إذا MKV 1080p يملك مدة حاوية أطول من video/audio duration وبمقدار قريب من مدة subtitle، فالزيادة من مسار الترجمة أو توقيته.
+4) إذا عينة FFmpeg تنجح لكن التطبيق يعلق، نحتاج Logcat من محاولة تشغيل الملف داخل التطبيق، خصوصًا MediaCodecRenderer / MediaCodec / decoder init / unsupported profile.
+5) نجاح اختبار FFmpeg ليس اختبارًا لـAndroid MediaCodec؛ هو مقارنة مرجعية لفك الترميز البرمجي فقط.
+
+ملاحظة: احتفظ بالتقارير المنفصلة أيضًا؛ التقرير الشامل يلخّص أهم الفروق، أما التقارير الفردية فتحتوي بيانات كل Stream ورسائل FFmpeg.

@@ -1,0 +1,71 @@
+========================================================================================
+تقرير تشخيص ملف فيديو
+========================================================================================
+الاسم: ناروتو S01 E116 [cnm-680unu62q5914m78cfcf] 240p.mp4
+المسار: /storage/emulated/0/Download/Games/mkv/ناروتو S01 E116 [cnm-680unu62q5914m78cfcf] 240p.mp4
+الحجم: 40.65 MiB (42627344 bytes)
+آخر تعديل: 2026-10-24T17:48:25+03:00
+
+[معلومات الحاوية / Container]
+format_name: mov,mp4,m4a,3gp,3g2,mj2
+format_long_name: QuickTime / MOV
+duration: 1359.524833 sec (1359.525)
+start_time: 0.000000 sec | bit_rate: 250836
+nb_streams: 3 | nb_programs: 0 | probe_score: 100
+format_tags: {"compatible_brands": "isomiso2avc1mp41", "encoder": "Lavf58.2.102", "major_brand": "isom", "minor_version": "512"}
+
+[المسارات Streams]
+المسار #0 | النوع: video | الترميز: h264 | الوصف: H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10
+  العنوان: VideoHandler | اللغة: und
+  الأبعاد: 426x240 | الأبعاد المشفّرة: 426x240
+  Profile: High | Pixel format: yuv420p | المستوى: 21
+  معدل الإطارات: avg=23.97602 fps | r=23.97602 fps | B-frames=2
+  الألوان: range=? | space=? | transfer=? | primaries=? | chroma=left
+  SAR/DAR: 640:639 / 16:9 | field order=progressive
+  البتات: raw=8 | coded=? | extradata=45 bytes
+  codec tag: avc1 | AVC=true | NAL length=4
+  الوقت: start=0.000 sec | duration=1359.525 sec [stream field] | time_base=1/24000 | duration_ts=32628596
+  bitrate=195398 | frames=32596 | packets_read=32596
+  الخصائص المفعّلة: default
+  Tags: {"handler_name": "VideoHandler", "language": "und"}
+المسار #1 | النوع: audio | الترميز: aac | الوصف: AAC (Advanced Audio Coding)
+  العنوان: SoundHandler | اللغة: jpn
+  Sample rate: 48000 Hz | channels=2 | layout=stereo | sample_fmt=fltp
+  bits/sample=0 | bits/raw=? | frame_size=?
+  الوقت: start=0.000 sec | duration=1359.495 sec [stream field] | time_base=1/48000 | duration_ts=65255760
+  bitrate=50000 | frames=63729 | packets_read=63729
+  الخصائص المفعّلة: default
+  Tags: {"handler_name": "SoundHandler", "language": "jpn", "name": "[Judas] JAP Stereo (Opus 112Kbps)"}
+المسار #2 | النوع: data | الترميز: bin_data | الوصف: binary data
+  العنوان: SubtitleHandler | اللغة: eng
+  الوقت: start=0.000 sec | duration=1359.498 sec [stream field] | time_base=1/1000 | duration_ts=1359498
+  bitrate=غير متوفر | frames=3 | packets_read=غير متوفر
+  Tags: {"handler_name": "SubtitleHandler", "language": "eng"}
+
+[الفصول Chapters]
+chapter #0: start=0.000000 | end=90.264000 | tags={'title': 'Chapter 01'}
+chapter #1: start=90.264000 | end=1264.837000 | tags={'title': 'Chapter 02'}
+chapter #2: start=1264.837000 | end=1359.498000 | tags={'title': 'Chapter 03'}
+
+[عينات توقيت الحزم Packets]
+v:0 - بداية: packets=120 | keyframes=4 | DTS regressions=0 | negative PTS=0
+  DTS: -0.083 -> 4.880 | PTS: 0.000 -> 4.880
+v:0 - نهاية: packets=120 | keyframes=1 | DTS regressions=0 | negative PTS=0
+  DTS: 1312.978 -> 1317.942 | PTS: 1313.062 -> 1317.942
+a:0 - بداية: packets=120 | keyframes=120 | DTS regressions=0 | negative PTS=2
+  DTS: -0.043 -> 2.497 | PTS: -0.043 -> 2.497
+
+[اختبار فك الترميز بواسطة FFmpeg البرمجي]
+mode=sample; الاختبار لا يغيّر الملف ولا ينشئ نسخة جديدة.
+البداية: نجح | exit=0 | time=0.25s
+  رسائل FFmpeg:
+  [in#0 @ 0xb4000072a62195f0] UDTA parsing failed retrying raw
+قرب نهاية الصورة/الصوت: نجح | exit=0 | time=0.21s
+  رسائل FFmpeg:
+  [in#0 @ 0xb4000075aee987f0] UDTA parsing failed retrying raw
+
+[ملاحظات تفسيرية]
+- نجاح FFmpeg في فك الملف يثبت قابلية فك العينة برمجيًا، ولا يثبت أن Android MediaCodec يدعم الترميز نفسه.
+- اختلاف مدة الحاوية عن مدة مسار الفيديو/الصوت قد ينتج من مدة الترجمة أو بيانات الحاوية، ولا يعني وحده تلف الفيديو.
+- H.264 High 10 أو pixel format مثل yuv420p10le يعني 10-bit؛ لا تفترض أن كل أجهزة Android تملك Decoder عتاديًا له.
+- DTS regressions في عينة الحزم مؤشر يحتاج تفسيرًا؛ لا تعتبر تغيّر PTS وحده خطأً لأن B-frames قد تعيد ترتيب العرض.

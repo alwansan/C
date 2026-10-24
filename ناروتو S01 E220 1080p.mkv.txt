@@ -1,0 +1,63 @@
+========================================================================================
+تقرير تشخيص ملف فيديو
+========================================================================================
+الاسم: ناروتو S01 E220 1080p.mkv
+المسار: /storage/emulated/0/Download/Games/mkv/ناروتو S01 E220 1080p.mkv
+الحجم: 189.77 MiB (198983495 bytes)
+آخر تعديل: 2026-10-23T17:34:24+03:00
+
+[معلومات الحاوية / Container]
+format_name: matroska,webm
+format_long_name: Matroska / WebM
+duration: 1414.090000 sec (1414.090)
+start_time: 0.000000 sec | bit_rate: 1125718
+nb_streams: 3 | nb_programs: 0 | probe_score: 100
+format_tags: {"COMPATIBLE_BRANDS": "isomiso2avc1mp41", "ENCODER": "Lavf62.12.101", "MAJOR_BRAND": "isom", "MINOR_VERSION": "512", "title": "ناروتو S01 E220"}
+
+[المسارات Streams]
+المسار #0 | النوع: video | الترميز: h264 | الوصف: H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10
+  العنوان: VideoHandler | اللغة: غير محددة
+  الأبعاد: 1280x960 | الأبعاد المشفّرة: 1280x960
+  Profile: High | Pixel format: yuv420p | المستوى: 40
+  معدل الإطارات: avg=29.97003 fps | r=29.97003 fps | B-frames=2
+  الألوان: range=? | space=? | transfer=? | primaries=? | chroma=left
+  SAR/DAR: 1:1 / 4:3 | field order=progressive
+  البتات: raw=8 | coded=? | extradata=41 bytes
+  codec tag: [0][0][0][0] | AVC=true | NAL length=4
+  الوقت: start=0.011 sec | duration=1414.090 sec [DURATION tag] | time_base=1/1000 | duration_ts=?
+  bitrate=غير متوفر | frames=غير متوفر | packets_read=42380
+  الخصائص المفعّلة: default
+  Tags: {"DURATION": "00:23:34.090000000", "HANDLER_NAME": "VideoHandler"}
+المسار #1 | النوع: audio | الترميز: aac | الوصف: AAC (Advanced Audio Coding)
+  العنوان: SoundHandler | اللغة: غير محددة
+  Sample rate: 48000 Hz | channels=2 | layout=stereo | sample_fmt=fltp
+  bits/sample=0 | bits/raw=? | frame_size=?
+  الوقت: start=0.000 sec | duration=1413.968 sec [DURATION tag] | time_base=1/1000 | duration_ts=?
+  bitrate=غير متوفر | frames=غير متوفر | packets_read=66280
+  الخصائص المفعّلة: default
+  Tags: {"DURATION": "00:23:33.968000000", "HANDLER_NAME": "SoundHandler"}
+المسار #2 | النوع: subtitle | الترميز: subrip | الوصف: SubRip subtitle
+  العنوان: arabic subtitle for ناروتو S01 E220 | اللغة: ar
+  Subtitle codec: subrip | codec tag: [0][0][0][0]
+  الوقت: start=0.000 sec | duration=1414.090 sec [stream field] | time_base=1/1000 | duration_ts=1414090
+  bitrate=غير متوفر | frames=غير متوفر | packets_read=242
+  Tags: {"DURATION": "00:23:13.541000000", "language": "ar", "title": "arabic subtitle for ناروتو S01 E220"}
+
+[عينات توقيت الحزم Packets]
+v:0 - بداية: packets=120 | keyframes=1 | DTS regressions=0 | negative PTS=0
+  DTS: 0.011 -> 3.915 | PTS: 0.011 -> 3.982
+v:0 - نهاية: packets=120 | keyframes=1 | DTS regressions=0 | negative PTS=0
+  DTS: 1368.478 -> 1372.382 | PTS: 1368.478 -> 1372.449
+a:0 - بداية: packets=120 | keyframes=120 | DTS regressions=0 | negative PTS=0
+  DTS: 0.000 -> 2.512 | PTS: 0.000 -> 2.512
+
+[اختبار فك الترميز بواسطة FFmpeg البرمجي]
+mode=sample; الاختبار لا يغيّر الملف ولا ينشئ نسخة جديدة.
+البداية: نجح | exit=0 | time=0.80s
+قرب نهاية الصورة/الصوت: نجح | exit=0 | time=0.75s
+
+[ملاحظات تفسيرية]
+- نجاح FFmpeg في فك الملف يثبت قابلية فك العينة برمجيًا، ولا يثبت أن Android MediaCodec يدعم الترميز نفسه.
+- اختلاف مدة الحاوية عن مدة مسار الفيديو/الصوت قد ينتج من مدة الترجمة أو بيانات الحاوية، ولا يعني وحده تلف الفيديو.
+- H.264 High 10 أو pixel format مثل yuv420p10le يعني 10-bit؛ لا تفترض أن كل أجهزة Android تملك Decoder عتاديًا له.
+- DTS regressions في عينة الحزم مؤشر يحتاج تفسيرًا؛ لا تعتبر تغيّر PTS وحده خطأً لأن B-frames قد تعيد ترتيب العرض.
